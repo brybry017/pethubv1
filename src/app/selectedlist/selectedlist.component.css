@@ -1,0 +1,19 @@
+
+.scrollarea {
+    min-height: 100px;
+  }
+  a.list-group-item.list-group-item-action.active.py-3.lh-tight {
+    color: black;
+    border: gray;
+    background-color: rgb(243, 226, 195);
+  }
+  .search {
+    padding: 15px 15px 15px 15px;
+  }
+  .searchBar {
+    border: none;
+    background-color: rgb(250, 237, 213);
+    border-radius: 15px;
+    width: 100%;
+    padding: 5px 5px 5px 15px;
+  }

@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white scrollbar-young-passion" style="width: 380px; overflow-y: scroll; border-radius: 8px; border: solid 1px gainsboro;  height: 660px;">
+                <div class="list-group list-group-flush border-bottom scrollarea"  style="border-radius: 8px;">
+                    <div style="border-radius: 8px;">
+                  <a href="#" class="list-group-item list-group-item-action active py-3 lh-tight" aria-current="true">
+                    <div class="d-flex w-100 align-items-center justify-content-between">
+                      <strong class="mb-1">Beatrice Luigi Gomez</strong>
+                      <small>Wed</small>
+                    </div>
+                    <div class="col-10 mb-1 small">Miss Universe 2021 Top 5</div>
+                  </a>
+                </div>
+                </div>
+              </div>
+            
+            <div class="container-chat">
+                <app-chatbox></app-chatbox>
+            </div>
+        </div>
+        <div class="col">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Pet Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Breed</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody *ngFor="let list of myDogs; let i = index">
+                    <tr>
+                        <th scope="row">{{i}}</th>
+                        <td>{{list.petName}}</td>
+                        <td>{{list.age}}</td>
+                        <td>{{list.breed}}</td>
+                        <td>{{list.gender}}</td>
+                        <td >
+                            <div class="d-flex flex-row mb-3">
+                              <div><button type="button" class="btn" (click)="FindMatch(list)">
+                                <i class="material-icons text-success">Find Match</i>
+                              </button></div>
+                              <div ><button type="button" class="btn">
+                                <i class="material-icons text-info">View</i>
+                              </button></div>
+                              <div ><button type="button" class="btn">
+                                <i class="material-icons text-danger">Delete</i>
+                              </button></div>
+                            </div>
+                          </td>
+                      </tr>
+                </tbody>
+              </table>
+              <div class="center">
+                <button type="button" class="btn btn-outline-primary">Add Dog</button>
+            </div>
+        </div>
+    </div>
+</div>
