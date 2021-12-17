@@ -2,21 +2,21 @@
     <div class="row">
         <div class="col">
             <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-white scrollbar-young-passion" style="width: 380px; overflow-y: scroll; border-radius: 8px; border: solid 1px gainsboro;  height: 660px;">
+              <div *ngFor="let chatlist of channelListv1; let i = index">
                 <div class="list-group list-group-flush border-bottom scrollarea"  style="border-radius: 8px;">
-                    <div style="border-radius: 8px;">
-                  <a href="#" class="list-group-item list-group-item-action active py-3 lh-tight" aria-current="true">
-                    <div class="d-flex w-100 align-items-center justify-content-between">
-                      <strong class="mb-1">Beatrice Luigi Gomez</strong>
-                      <small>Wed</small>
-                    </div>
-                    <div class="col-10 mb-1 small">Miss Universe 2021 Top 5</div>
-                  </a>
-                </div>
-                </div>
+                  <div style="border-radius: 8px;">
+                <a routerLink="/list/dog/{{chatlist.channel}}" class="list-group-item list-group-item-action active py-3 lh-tight" (click)="channel(chatlist.channel)" aria-current="true">
+                  <div class="d-flex w-100 align-items-center justify-content-between">
+                    <strong class="mb-1">{{chatlist.channel}}</strong>
+                  </div>
+                </a>
+              </div>
+              </div>
+              </div>  
               </div>
             
             <div class="container-chat">
-                <app-chatbox></app-chatbox>
+                <app-chatbox [item]="currentItem"></app-chatbox>
             </div>
         </div>
         <div class="col">

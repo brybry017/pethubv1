@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input  } from '@angular/core';
 import { dataaa } from './dataa';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,22 +14,26 @@ export class ChatboxComponent implements OnInit {
   arraychat: dataaa[] = [];
   chat: any = [];
   listt: any;
+  @Input() item = '';
   
   constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
-    let source = new EventSource(this.endpoint+"MI-345651");
+    console.log(this.item);
+    let source = new EventSource(this.endpoint+this.item);
     source.addEventListener('message', message=>{
       let str: string = message.data;
       this.arraychat.push(JSON.parse(str))
       this.listt = this.arraychat;
       console.log(this.listt)
     })
+
   }
 
   sendChat(message:HTMLInputElement){
+
     const val = {
-      "messageId":"MI-345651",
+      "messageId":this.item,
       "messages":[{
           "message":message.value,
           "from":"testfrom",

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { BodyComponent } from './body/body.component';
+import { ChatboxComponent } from './chatbox/chatbox.component';
 import { HomeComponent } from './home/home.component';
 import { ListComponent } from './list/list.component';
 import { LoginComponent } from './login/login.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'findmatch/:gender',component:BodyComponent},
   {path:'list',component:ListComponent},
   {path:'list/:animal', component:SelectedlistComponent},
+  {path:'list/:animal/:channel', component:ChatboxComponent},
   {path: '',   redirectTo: '/home', pathMatch: 'full' },
 
 

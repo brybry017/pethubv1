@@ -61,6 +61,10 @@ export class BackendService {
     );
   }
 
+  getChannels(username:String){
+    return this.http.get(this.endpointpet+"dogOwnerProfile/"+username);
+  } 
+
   Currentt(daa: any){
     this.dogUseInfo.next(daa);
   }
